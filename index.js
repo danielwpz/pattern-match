@@ -7,6 +7,9 @@ const defaultOptions = {
 
 function removeTrailingSlash(s)     
 {     
+    if (s.length <= 1) {
+        return s;
+    }
     return s.replace(/\/$/, "");
 } 
 
