@@ -13,6 +13,26 @@ function runTestCases(tests) {
 }
 
 describe('Pattern match', () => {
+  
+  describe('exact match', () => {
+    const testCases = [
+      {
+        pattern: '/user/1234',
+        matchStrings: [
+          '/user/1234'
+        ],
+        failStrings: [
+          '*',
+          '/user',
+          '/user/5678'
+        ]
+      }
+    ];
+
+    it('should return correct match results', () => {
+      runTestCases(testCases);
+    });
+  });
 
   describe('component extraction', () => {
     const pattern = '/user/:uid/client/:cid/*';
